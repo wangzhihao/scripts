@@ -54,7 +54,6 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/usr/local/heroku/bin:/Users/wangzhihao/.nvm/v0.12.2/bin:/Applications/Sublime Text.app/Contents/SharedSupport/bin/:/usr/local/mysql/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin"
 alias testdb="mongo openlocal.com/opentown"
 export open="/Users/wangzhihao/opentown/"
 source $ZSH/oh-my-zsh.sh
@@ -90,4 +89,15 @@ alias go-to-my-own-projects="cd ~/myOwnProjects"
 
 #note the nvm.sh will modify man path( and buggy which override man path), so
 #this export must be after the nvm.sh
-export MANPATH="/usr/share/man:/usr/local/man:$MANPATH"
+export MANPATH="/usr/share/man:/usr/local/man:/usr/local/share/man:$MANPATH"
+
+export PATH="/sbin:/bin"
+
+export PATH="/usr/bin:$PATH"
+export PATH="/usr/sbin:$PATH"
+
+export PATH="/opt/local/bin:$PATH"
+export PATH="/opt/local/sbin:$PATH"
+
+export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
