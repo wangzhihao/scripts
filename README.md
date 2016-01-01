@@ -5,7 +5,8 @@ vim, git etc
 On mac most tools are installed by Homebrew. If there is an expection I will put it out explictly.
 
 ## tmux
-The conf location of tmux should put in `/user/local/etc/tmux.conf`
+The system conf location :  /usr/local/etc/tmux.conf
+The user conf location:     ~/.tmux.conf
 
 ##zsh
-zshrc should be put in `~/.zshrc`
+The user conf location:     ~/.zshrc.conf
