@@ -6,3 +6,6 @@ On mac most tools are installed by Homebrew. If there is an expection I will put
 
 ## tmux
 The conf location of tmux should put in `/user/local/etc/tmux.conf`
+
+##zsh
+zshrc should be put in `~/.zshrc`
