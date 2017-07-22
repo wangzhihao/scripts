@@ -13,7 +13,7 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 " YCM might require your system have newer version of compile tools like                                                                                  
 " gcc(or clang), and libraries like glibc. Building from source is a good                                                                                 
 " option since yum is not update.                                                                                                                         
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 " Using a non-master branch
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 
