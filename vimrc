@@ -1,6 +1,15 @@
 "source /apollo/env/envImprovement/var/vimrc
 
+" auto reload vim. tips from http://www.bestofvim.com/tip/auto-reload-your-vimrc/
+augroup reload_vimrc " {
+    autocmd!
+    autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END " }
+
 set number
+set hidden
+" highlight all matches
+set hlsearch
 let g:EclimCompletionMethod = 'omnifunc'
 
 " Specify a directory for plugins                                                                                                                         
@@ -8,7 +17,7 @@ let g:EclimCompletionMethod = 'omnifunc'
 " - Avoid using standard Vim directory names like 'plugin'
 
 call plug#begin('~/.vim/plugged')
-
+Plug 'tpope/vim-abolish'
 " Add maktaba and codefmt to the runtimepath.
 " (The latter must be installed before it can be used.)
 Plug 'google/vim-maktaba'
