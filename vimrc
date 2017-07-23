@@ -7,6 +7,7 @@ augroup reload_vimrc " {
 augroup END " }
 
 set number
+" enable buffer to be hidden
 set hidden
 " highlight all matches
 set hlsearch
