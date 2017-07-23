@@ -1,12 +1,21 @@
 "source /apollo/env/envImprovement/var/vimrc
 
 set number
+let g:EclimCompletionMethod = 'omnifunc'
 
 " Specify a directory for plugins                                                                                                                         
 " - For Neovim: ~/.local/share/nvim/plugged 
 " - Avoid using standard Vim directory names like 'plugin'
 
 call plug#begin('~/.vim/plugged')
+
+" Add maktaba and codefmt to the runtimepath.
+" (The latter must be installed before it can be used.)
+Plug 'google/vim-maktaba'
+Plug 'google/vim-codefmt'
+" Also add Glaive, which is used to configure codefmt's maktaba flags. See
+" `:help :Glaive` for usage.
+Plug 'google/vim-glaive'
 " Make sure you use single quotes
 " Multiple Plug commands can be written in a single line using | separators
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
@@ -46,3 +55,8 @@ Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 
 " Initialize plugin system
 call plug#end()
+" the glaive#Install() should go after the "call vundle#end()"
+call glaive#Install()
+" Optional: Enable codefmt's default mappings on the <Leader>= prefix.
+Glaive codefmt plugin[mappings]
+Glaive codefmt google_java_executable="java -jar /home/zhihaow/local/google-java-format/google-java-format-1.3-all-deps.jar --aosp"
