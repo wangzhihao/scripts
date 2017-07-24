@@ -18,6 +18,7 @@ let g:EclimCompletionMethod = 'omnifunc'
 " - Avoid using standard Vim directory names like 'plugin'
 
 call plug#begin('~/.vim/plugged')
+Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-abolish'
 " Add maktaba and codefmt to the runtimepath.
 " (The latter must be installed before it can be used.)
@@ -70,3 +71,5 @@ call glaive#Install()
 " Optional: Enable codefmt's default mappings on the <Leader>= prefix.
 Glaive codefmt plugin[mappings]
 Glaive codefmt google_java_executable="java -jar /home/zhihaow/local/google-java-format/google-java-format-1.3-all-deps.jar --aosp"
+"choose color scheme provided by plugin 'flazz/vim-colorschemes'
+colorscheme 1989
