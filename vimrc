@@ -1,18 +1,5 @@
 "source /apollo/env/envImprovement/var/vimrc
 
-" auto reload vim. tips from http://www.bestofvim.com/tip/auto-reload-your-vimrc/
-augroup reload_vimrc " {
-    autocmd!
-    autocmd BufWritePost $MYVIMRC source $MYVIMRC
-augroup END " }
-
-set number
-" enable buffer to be hidden
-set hidden
-" highlight all matches
-set hlsearch
-let g:EclimCompletionMethod = 'omnifunc'
-
 " Specify a directory for plugins                                                                                                                         
 " - For Neovim: ~/.local/share/nvim/plugged 
 " - Avoid using standard Vim directory names like 'plugin'
@@ -66,10 +53,30 @@ Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 
 " Initialize plugin system
 call plug#end()
+
 " the glaive#Install() should go after the "call vundle#end()"
 call glaive#Install()
 " Optional: Enable codefmt's default mappings on the <Leader>= prefix.
 Glaive codefmt plugin[mappings]
 Glaive codefmt google_java_executable="java -jar /home/zhihaow/local/google-java-format/google-java-format-1.3-all-deps.jar --aosp"
+
 "choose color scheme provided by plugin 'flazz/vim-colorschemes'
-colorscheme 1989
+colorscheme 1989 
+
+" UltiSnips triggering
+let g:UltiSnipsExpandTrigger = '<C-j>'
+let g:UltiSnipsJumpForwardTrigger = '<C-j>'
+let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
+
+" auto reload vim. tips from http://www.bestofvim.com/tip/auto-reload-your-vimrc/
+augroup reload_vimrc " {
+    autocmd!
+    autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END " }
+
+set number
+" enable buffer to be hidden
+set hidden
+" highlight all matches
+set hlsearch
+let g:EclimCompletionMethod = 'omnifunc'
