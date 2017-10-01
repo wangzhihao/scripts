@@ -1,10 +1,11 @@
 "source /apollo/env/envImprovement/var/vimrc
 
-" Specify a directory for plugins                                                                                                                         
-" - For Neovim: ~/.local/share/nvim/plugged 
+" Specify a directory for plugins
+" - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
 
 call plug#begin('~/.vim/plugged')
+Plug 'godlygeek/tabular'
 Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-abolish'
 " Add maktaba and codefmt to the runtimepath.
@@ -17,9 +18,9 @@ Plug 'google/vim-glaive'
 " Make sure you use single quotes
 " Multiple Plug commands can be written in a single line using | separators
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-" YCM might require your system have newer version of compile tools like                                                                                  
-" gcc(or clang), and libraries like glibc. Building from source is a good                                                                                 
-" option since yum is not update.                                                                                                                         
+" YCM might require your system have newer version of compile tools like
+" gcc(or clang), and libraries like glibc. Building from source is a good
+" option since yum is not update.
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 " Using a non-master branch
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
@@ -61,7 +62,7 @@ Glaive codefmt plugin[mappings]
 Glaive codefmt google_java_executable="java -jar /home/zhihaow/local/google-java-format/google-java-format-1.3-all-deps.jar --aosp"
 
 "choose color scheme provided by plugin 'flazz/vim-colorschemes'
-colorscheme 1989 
+colorscheme 1989
 
 " UltiSnips triggering
 let g:UltiSnipsExpandTrigger = '<C-j>'
@@ -80,3 +81,9 @@ set hidden
 " highlight all matches
 set hlsearch
 let g:EclimCompletionMethod = 'omnifunc'
+set autoread
+set ts=4 sw=4 sts=4 et
+"Remove all trailing whitespace by pressing F5
+nnoremap <F12> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+au BufEnter *.scala setl formatprg=java\ -jar\ /local/home/zhihaow/local/scalariform/scalariform.jar\ -f\ -q\ -indentSpaces=4\ +compactControlReadability\ +alignParameters\ +alignArguments\ +alignSingleLineCaseStatements\ -danglingCloseParenthesis=Force\ +doubleIndentConstructorArguments\ +rewriteArrowSymbols\ +preserveSpaceBeforeArguments\ --stdin\ --stdout
+au BufEnter *.scala setl equalprg=java\ -jar\ /local/home/zhihaow/local/scalariform/scalariform.jar\ -f\ -q\ -indentSpaces=4\ +compactControlReadability\ +alignParameters\ +alignArguments\ +alignSingleLineCaseStatements\ -danglingCloseParenthesis=Force\ +doubleIndentConstructorArguments\ +rewriteArrowSymbols\ +preserveSpaceBeforeArguments\ --stdin\ --stdout
