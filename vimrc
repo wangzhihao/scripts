@@ -5,6 +5,7 @@
 " - Avoid using standard Vim directory names like 'plugin'
 
 call plug#begin('~/.vim/plugged')
+Plug 'autowitch/hive.vim'
 Plug 'godlygeek/tabular'
 Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-abolish'
@@ -87,3 +88,5 @@ set ts=4 sw=4 sts=4 et
 nnoremap <F12> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 au BufEnter *.scala setl formatprg=java\ -jar\ /local/home/zhihaow/local/scalariform/scalariform.jar\ -f\ -q\ -indentSpaces=4\ +compactControlReadability\ +alignParameters\ +alignArguments\ +alignSingleLineCaseStatements\ -danglingCloseParenthesis=Force\ +doubleIndentConstructorArguments\ +rewriteArrowSymbols\ +preserveSpaceBeforeArguments\ --stdin\ --stdout
 au BufEnter *.scala setl equalprg=java\ -jar\ /local/home/zhihaow/local/scalariform/scalariform.jar\ -f\ -q\ -indentSpaces=4\ +compactControlReadability\ +alignParameters\ +alignArguments\ +alignSingleLineCaseStatements\ -danglingCloseParenthesis=Force\ +doubleIndentConstructorArguments\ +rewriteArrowSymbols\ +preserveSpaceBeforeArguments\ --stdin\ --stdout
+" for .hql files
+au BufNewFile,BufRead *.hql set filetype=hive expandtab
